@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/contants.dart';
+import 'package:myapp/screens/onboarding_screen.dart';
 import 'package:myapp/screens/splash_screen.dart';
 
 void main() {
@@ -14,9 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: kFontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      home: OnboardingScreen(),
     );
   }
 }
