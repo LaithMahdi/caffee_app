@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myapp/constants.dart';
+import 'package:myapp/data/dummy.dart';
+import 'package:myapp/models/category_model.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<CategoryModel> data = categories;
+
+  @override
+  void initState() {
+    data.insert(0, CategoryModel(id: 0, name: "All Coffee", isSelected: true));
+    super.initState();
+  }
+
+  void onCategoryChange(CategoryModel category) {
+    for (var e in data) {
+      e.isSelected = false;
+    }
+    category.isSelected = true;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +94,45 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 31),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                spacing: 16,
+                children: List.generate(data.length, (index) {
+                  final category = data[index];
+                  return InkWell(
+                    onTap: () {
+                      onCategoryChange(category);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        color: category.isSelected
+                            ? kPrimaryColor
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Text(
+                        category.name,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: category.isSelected
+                              ? Colors.white
+                              : Color(0xff313131),
+                          fontWeight: category.isSelected
+                              ? FontWeight.w600
+                              : null,
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ),
+            SizedBox(height: 16),
           ],
         ),
       ),
