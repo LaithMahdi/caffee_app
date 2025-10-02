@@ -133,6 +133,82 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 16),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 24,
+                  crossAxisSpacing: 15,
+                  childAspectRatio: 156 / 238,
+                ),
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return Container(
+                    padding: EdgeInsets.fromLTRB(8, 8, 8, 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Color(0xffEEEEEE)),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadiusGeometry.circular(9),
+                            child: Image.asset(
+                              product.image,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          product.name,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff242424),
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Text(
+                          product.category.name,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffA2A2A2),
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "\$${product.price}",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Color(0xff050505),
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            IconButton.filled(
+                              onPressed: () {},
+                              icon: Icon(Icons.add, color: Colors.white),
+                              style: IconButton.styleFrom(
+                                backgroundColor: kPrimaryColor,
+                                foregroundColor: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
