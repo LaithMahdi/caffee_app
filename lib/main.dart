@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/contants.dart';
+import 'package:myapp/constants.dart';
+import 'package:myapp/screens/home_screen.dart';
 import 'package:myapp/screens/onboarding_screen.dart';
 import 'package:myapp/screens/splash_screen.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: kFontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: OnboardingScreen(),
+      home: HomeScreen(),
     );
   }
 }

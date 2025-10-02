@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/contants.dart';
+import 'package:myapp/constants.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
