@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
         fontFamily: kFontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      // home: HomeScreen(),
       routes: {
-        // "/": (context) => SplashScreen(),
-        "/": (context) => HomeScreen(),
-        "/product-detail": (context) => ProductDetailScreen(),
+        kSplash: (context) => SplashScreen(),
+        kOnboarding: (context) => OnboardingScreen(),
+        kHome: (context) => HomeScreen(),
+        kProductDetail: (context) => ProductDetailScreen(),
       },
     );
   }

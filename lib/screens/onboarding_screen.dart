@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/constants.dart';
 import '../widgets/primary_button.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -39,7 +40,12 @@ class OnboardingScreen extends StatelessWidget {
             SizedBox(height: 32),
             SizedBox(
               width: double.infinity,
-              child: PrimaryButton(title: "Get Started", onPressed: () {}),
+              child: PrimaryButton(
+                title: "Get Started",
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, kHome);
+                },
+              ),
             ),
             SizedBox(height: 20),
           ],

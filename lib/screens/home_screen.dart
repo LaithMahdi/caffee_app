@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myapp/constants.dart';
 import 'package:myapp/data/dummy.dart';
 import 'package:myapp/models/category_model.dart';
-import 'package:myapp/screens/product_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -149,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.pushNamed(
                         context,
-                        "/product-detail",
+                        kProductDetail,
                         arguments: {'product': product},
                       );
                     },
