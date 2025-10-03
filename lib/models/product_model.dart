@@ -22,4 +22,9 @@ class ProductModel {
     required this.rating,
     required this.sizes,
   });
+
+  @override
+  String toString() {
+    return 'ProductModel{id: $id, name: $name, category: $category, price: $price, description: $description, image: $image, rating: $rating, rateCount: $rateCount, sizes: $sizes}';
+  }
 }

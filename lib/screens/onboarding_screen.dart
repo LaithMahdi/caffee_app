@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/constants.dart';
+import '../widgets/primary_button.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -39,25 +39,7 @@ class OnboardingScreen extends StatelessWidget {
             SizedBox(height: 32),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kPrimaryColor,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(9),
-                  ),
-                  padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                ),
-                child: Text(
-                  "Get Started",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
+              child: PrimaryButton(title: "Get Started", onPressed: () {}),
             ),
             SizedBox(height: 20),
           ],

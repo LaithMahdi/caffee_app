@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/constants.dart';
 import 'package:myapp/screens/home_screen.dart';
 import 'package:myapp/screens/onboarding_screen.dart';
+import 'package:myapp/screens/product_detail_screen.dart';
 import 'package:myapp/screens/splash_screen.dart';
 
 void main() {
@@ -20,7 +21,12 @@ class MyApp extends StatelessWidget {
         fontFamily: kFontFamily,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomeScreen(),
+      // home: HomeScreen(),
+      routes: {
+        // "/": (context) => SplashScreen(),
+        "/": (context) => HomeScreen(),
+        "/product-detail": (context) => ProductDetailScreen(),
+      },
     );
   }
 }
